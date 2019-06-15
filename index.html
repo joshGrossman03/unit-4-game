@@ -4,24 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Battle for King's Landing</title>
+    <title>Crystal Collector</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">s</script>
 </head>
 <body>
-    <div class="conatiner-fluid">
-        <div id="gameTitle"><h3>The Battle For King's Landing</h3></div>
-        <div id="mainCharacters"></div>
-        <div id="characterTitle"><h3>Your Character</h3></div>
-        <div id="theEnemies"></div>
-        <div id="enemyTitle"><h3>Available Enemies</h3></div>
-        <div id="battleGrounds">The Battle Ground</div>
-        <div id="attackButton"></div>
-        <div id="defender"></div>
-        <div id="defenderTitle">Defender</div>
-        <div id="restart"></div>
+    <div class="container">
+    <div class="row">
+            <div class="col-md-4"></div>
+        <div align="center" class="col-md-4">
+            <h2>Crystal Collector</h2>
+        </div>
+        <div class="col-md-4"></div>
     </div>
-    
-<script src="./assets/javascript/game.js"> </script>
+    <div class="row">
+            <div class="col-md-4">
+                    <h3>Rules of the Game</h3>
+                </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-1"></div>
+        <div id="numberRandom" class="col-md-3">
+            <h3>Random Number</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div id="crysDisplay" class="col-md-4"><!--The Crstals will be displayed inside of this div--></div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      
+        <div align="center" id="msgBoard" class="col-md-6">
+            <h2>Message Board</h2>
+            <!--this div will contain messsages written to player-->
+        </div>
+        <div align="center" id="scoreCard" class="col-md-6">
+            <h2>Scorecard</h2>
+            <h3 id="wins"></h3><br>
+            <h3 id="losses"></h3>
+        </div>
+    </div>
+</div>
 
-    
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script type="text/javascript" src="./assets/javascript/game.js"></script>
 </body>
 </html>
