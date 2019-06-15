@@ -1,7 +1,13 @@
 
 var crystalsArray =[];
+var score = 0;
+var wins = 0;
+var losses = 0;
+var roundScore;
 
-
+function reset(){
+    roundScore = 0;
+}
 function crystals(type, value, pic) {
     this.type = type;
     this.value = value;
@@ -29,3 +35,15 @@ for(i = 0; i<crystalsArray.length;i++){
     $(crysPic).attr("style","width:130px");
     $("#crysDisplay").append(crysPic);
 }
+
+
+
+    $("img").on("click", function(){
+        roundScore = parseInt($("img").attr("data-number"));
+        score  += roundScore;
+        console.log(roundScore);
+        console.log(score);
+        reset();
+        
+    })
+
