@@ -8,22 +8,28 @@ var ruby;
 var emerald;
 var saphire;
 var roundScore;
+var ambient = document.getElementById("ambient");
+
+
+
+$("#hideMe").hide();
 
 function game(){
-    
+    ambient.play();
     $("#hideMe").hide();
     $("#mainGame").show();
     //when we reset the game we want to reset the random number and crystals
     randomNum = Math.floor(Math.random() * 12 +39);
     $("#numberRandom").html("Random Number: " + randomNum);
-
+    //initialize objects
     diamond = new crystals("diamond", "./assets/images/dmd.jpg");
     ruby = new crystals("ruby", "./assets/images/ruby.jpg");
     emerald = new crystals("emerald", "./assets/images/emerald.jpg");
     saphire = new crystals("saphire", "./assets/images/saphire.jpg");
     crystalsArray.push(diamond,ruby, emerald, saphire);
+    //for loop to display crystal object on document and assign type, value and picture attributes to each element
     for(var i = 0; i < crystalsArray.length;i++){
-        // randomValue = Math.floor(Math.random() * 12 +1);
+
         var crysPic = $("<img>");
         $(crysPic).addClass("img-thumbnail number");
         $(crysPic).addClass(crystalsArray[i].type);
@@ -33,11 +39,11 @@ function game(){
         $("#crysDisplay").append(crysPic);
     }
 
-
+//event grabs value of crystal adds to score  variable then calls checkForWin function
     
     $(".number").on("click", function(){
         var roundScore = parseInt($(this).attr("value"));
-        $("#valueCrys").html("Crystal Value: "+ roundScore);
+        //$("#valueCrys").html("Crystal Value: "+ roundScore);
         score = (parseInt(score)+ parseInt(roundScore));
         $("#currentTotal").html("Your Current Total: "+ score);
         roundScore = 0;
@@ -51,14 +57,12 @@ function game(){
     
    
 }
-
+//constructor function
     function crystals(type, pic) {
         this.type = type;
         this.value = Math.floor(Math.random() * 12 +1);
         this.pic= pic;
     }
-
-//Initialize objects
 
 function reset() {
     $("#crysDisplay").empty();
@@ -67,8 +71,7 @@ function reset() {
     crystalsArray =[];
     roundScore = 0;
     $("#valueCrys").html("Crystal Value: "+ roundScore);
-    game();
-    
+    game();    
 }
 
 function gameReset(){
@@ -79,8 +82,6 @@ function gameReset(){
     $("#losses").html("Losses: " + losses);
     $("#wins").html("Wins: " + wins);
     $("#numberRandom").html("Random Number: " + randomNum);
-    
-
 }
 
 
@@ -88,9 +89,14 @@ function checkForWin(){
     
     if (losses > 9 ){
         $("#gameMessages").html("GAME OVER :("); 
-        $("#hideMe").show();
         $("#mainGame").hide();
-        
+        $("#hideMe").show();
+        var gameOverPic = $("<img>");
+        $(gameOverPic).addClass("img-thumbnail");
+        $(gameOverPic).attr("src", "./assets/images/gameover.gif");
+        $(gameOverPic).attr("style","width:400px");
+
+        $("#gameOver").append(gameOverPic);
 
     }
     
@@ -109,10 +115,10 @@ function checkForWin(){
         $("#wins").html("Wins: " + wins);
         $("#gameMessages").html("You Won This Round!");
         reset();
-      
-        
         }
     }
+
+    // onClick events for start and restart buttons
 
     $("#startGame").on("click", function(){
         game();
