@@ -1,0 +1,9 @@
+#startButton{
+    position:relative;
+}
+
+#startGame{
+    position: absolute;
+    top:350px;
+    right:20px;
+}

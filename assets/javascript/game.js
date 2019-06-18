@@ -13,6 +13,7 @@ var ambient = document.getElementById("ambient");
 
 
 $("#hideMe").hide();
+$("#mainGame").hide();
 
 function game(){
     ambient.play();
@@ -51,10 +52,7 @@ function game(){
         console.log(score);
         console.log(randomNum);
         checkForWin();
-    });
-
-   
-    
+    });  
    
 }
 //constructor function
@@ -78,6 +76,12 @@ function gameReset(){
     losses = 0;
     wins = 0;
     randomNum = 0;
+    $("#crysDisplay").empty();
+    score = 0;
+    $("#currentTotal").html("Your Current Total: "+ score);
+    crystalsArray =[];
+    roundScore = 0;
+    $("#valueCrys").html("Crystal Value: "+ roundScore);
     $("#gameMessages").empty();
     $("#losses").html("Losses: " + losses);
     $("#wins").html("Wins: " + wins);
@@ -90,12 +94,12 @@ function checkForWin(){
     if (losses > 9 ){
         $("#gameMessages").html("GAME OVER :("); 
         $("#mainGame").hide();
+        ambient.stop();
         $("#hideMe").show();
         var gameOverPic = $("<img>");
         $(gameOverPic).addClass("img-thumbnail");
         $(gameOverPic).attr("src", "./assets/images/gameover.gif");
         $(gameOverPic).attr("style","width:400px");
-
         $("#gameOver").append(gameOverPic);
 
     }
@@ -130,6 +134,7 @@ function checkForWin(){
         gameReset();
         $("#hideMe").hide();
         $("#mainGame").show();
+        $("#startGame").show();
     });
 
 
