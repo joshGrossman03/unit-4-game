@@ -7,11 +7,12 @@ var diamond;
 var ruby;
 var emerald;
 var saphire;
-var roundScore = 0;
+var roundScore;
 
 function game(){
     
-    
+    $("#hideMe").hide();
+    $("#mainGame").show();
     //when we reset the game we want to reset the random number and crystals
     randomNum = Math.floor(Math.random() * 12 +39);
     $("#numberRandom").html("Random Number: " + randomNum);
@@ -25,21 +26,29 @@ function game(){
         // randomValue = Math.floor(Math.random() * 12 +1);
         var crysPic = $("<img>");
         $(crysPic).addClass("img-thumbnail number");
+        $(crysPic).addClass(crystalsArray[i].type);
         $(crysPic).attr("value", crystalsArray[i].value);
         $(crysPic).attr("src", crystalsArray[i].pic);
         $(crysPic).attr("style","width:130px");
         $("#crysDisplay").append(crysPic);
     }
+
+
+    
     $(".number").on("click", function(){
-        roundScore = parseInt($(".number").attr("value"));
+        var roundScore = parseInt($(this).attr("value"));
         $("#valueCrys").html("Crystal Value: "+ roundScore);
         score = (parseInt(score)+ parseInt(roundScore));
         $("#currentTotal").html("Your Current Total: "+ score);
+        roundScore = 0;
         console.log(roundScore);
         console.log(score);
         console.log(randomNum);
         checkForWin();
     });
+
+   
+    
    
 }
 
@@ -58,33 +67,63 @@ function reset() {
     crystalsArray =[];
     roundScore = 0;
     $("#valueCrys").html("Crystal Value: "+ roundScore);
-    game()
+    game();
+    
+}
+
+function gameReset(){
+    losses = 0;
+    wins = 0;
+    randomNum = 0;
+    $("#gameMessages").empty();
+    $("#losses").html("Losses: " + losses);
+    $("#wins").html("Wins: " + wins);
+    $("#numberRandom").html("Random Number: " + randomNum);
+    
+
 }
 
 
 function checkForWin(){
-    if(score < randomNum){
+    
+    if (losses > 9 ){
+        $("#gameMessages").html("GAME OVER :("); 
+        $("#hideMe").show();
+        $("#mainGame").hide();
+        
+
+    }
+    
+    else if(score < randomNum){
         $("#gameMessages").html("Click another crystal <br> to keep going!");
-             
+        roundScore = 0;  
         }
     else if (score > randomNum){
         losses++;
         $("#losses").html("Losses: " + losses);
         $("#gameMessages").html("You Lost The Round :(");
-        reset()
-      
-        
+        reset();
         }
     else if(score === randomNum){
         wins++;
         $("#wins").html("Wins: " + wins);
         $("#gameMessages").html("You Won This Round!");
-        reset()
+        reset();
       
         
         }
     }
 
-game();
+    $("#startGame").on("click", function(){
+        game();
+        $("#startGame").hide();
+    });
+   
+    $("#restart").on("click", function(){
+        reset();
+        gameReset();
+        $("#hideMe").hide();
+        $("#mainGame").show();
+    });
 
 
