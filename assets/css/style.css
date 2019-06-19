@@ -1,9 +1,44 @@
 #startButton{
     position:relative;
+    background-color: black;
 }
 
 #startGame{
     position: absolute;
     top:350px;
     right:20px;
+}
+
+#restart{
+    
+    margin:30px;
+}
+
+#hideMe{
+    background-color: black;
+}
+
+.bg{
+    background-image: url("./assets/images/zen_background.jpg");
+}
+
+
+
+.modal-body, .modal-title{
+    color: black;
+}
+#gameInfo{
+    background-color: aliceblue;
+    opacity: 0.5;
+    color: black;
+    margin-top: 40px;
+    margin-bottom:60px;
+}
+#crystals{
+    margin-top:30px;
+    margin-bottom:160px;
+}
+
+#startScreen{
+    background-color: black;
 }

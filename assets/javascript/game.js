@@ -8,14 +8,17 @@ var ruby;
 var emerald;
 var saphire;
 var roundScore;
-var ambient = document.getElementById("ambient");
+var ambient = new Audio('./assets/audio/ambient.mp3');
 
 
 
 $("#hideMe").hide();
 $("#mainGame").hide();
+$(".view").hide();
+
 
 function game(){
+    $(".view").show();
     ambient.play();
     $("#hideMe").hide();
     $("#mainGame").show();
@@ -92,15 +95,16 @@ function gameReset(){
 function checkForWin(){
     
     if (losses > 9 ){
-        $("#gameMessages").html("GAME OVER :("); 
+        $(".view").hide();
+        $("#gameMessages").html("GAME <br> OVER"); 
         $("#mainGame").hide();
-        ambient.stop();
         $("#hideMe").show();
         var gameOverPic = $("<img>");
         $(gameOverPic).addClass("img-thumbnail");
         $(gameOverPic).attr("src", "./assets/images/gameover.gif");
         $(gameOverPic).attr("style","width:400px");
         $("#gameOver").append(gameOverPic);
+        ambient.pause();
 
     }
     
@@ -111,13 +115,13 @@ function checkForWin(){
     else if (score > randomNum){
         losses++;
         $("#losses").html("Losses: " + losses);
-        $("#gameMessages").html("You Lost The Round :(");
+        $("#gameMessages").html("You Lost <br> The Round :(");
         reset();
         }
     else if(score === randomNum){
         wins++;
         $("#wins").html("Wins: " + wins);
-        $("#gameMessages").html("You Won This Round!");
+        $("#gameMessages").html("You Won <br> This Round!");
         reset();
         }
     }
@@ -127,7 +131,12 @@ function checkForWin(){
     $("#startGame").on("click", function(){
         game();
         $("#startGame").hide();
+        $("#mainGame").show();
     });
+
+    $("#modalOkButton").click( function(){
+        $("#startButton").hide();
+    })
    
     $("#restart").on("click", function(){
         reset();
