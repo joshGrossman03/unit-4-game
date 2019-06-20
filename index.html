@@ -1,122 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Zen Crystals</title>
 
-    <link href="./assets/css/style.css"rel="stylesheet"> 
-    <link href="./assets/css/reset.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">s</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Zen Crystals</title>
+
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <link href="./assets/css/reset.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">s</script>
+  <link href="https://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-           
-    <div id="startButton" class="container">
-           
-            <div id="startScreen" class="row" >
-                <div class="col-md-5"></div>
-                    <!-- Button to Open the Modal -->
-                <div align="center" class="col-md-2">
-                <button id="startGame" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
-                Start Your Zen Journey
-              </button>
-              
-              <!-- The Modal -->
-              <div class="modal" id="myModal">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-              
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                      <h4 class="modal-title">Zen Crystals</h4>
-                      <button id=modalOkButton type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-              
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                      We invite you to sit back and allow yourself to relax as you listen to the music and play.<br><br>
-                      The object of this game is to match your score to the randomly generated number. As you click 
-                      one of the 4 crystals in the middile of the display you will see you score begin to climb. Each of the
-                      crystals has a random value that you must figure out and remember.<br><br>
-                      Be careful not to let your score pass the random number or you will lose the round. <br> <br>After
-                      10 losses the game is over and you must start your journey again. <br> <br><br>Once you are ready to proceed, click OK.
-                    </div>
-              
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-                    </div>
-                
-                  </div>
-                </div>
+
+
+  <div id="startButton" class="container">
+
+    <div id="startScreen" class="row">
+      <div class="col-md-5"></div>
+      <!-- Button to Open the Modal -->
+      <div align="center" class="col-md-2">
+        <button id="startGame" type="button" class="btn-dark" data-toggle="modal" data-target="#myModal"
+          style="font-family: 'Swanky and Moo Moo', cursive;">
+          Start Your Zen Journey
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title" style="font-family: 'Swanky and Moo Moo', cursive;">Zen Crystals</h4>
+                <button id=modalOkButton type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
+
+              <!-- Modal body -->
+              <div class="modal-body" style="font-family: 'Swanky and Moo Moo', cursive;">
+                We invite you to sit back and allow yourself to relax as you listen to the music and play.<br><br>
+                The object of this game is to match your score to the randomly generated number. As you click
+                one of the 4 crystals in the middile of the display you will see you score begin to climb. Each of the
+                crystals has a random value of which you must be mindful.<br><br>
+                Be careful not to let your score pass the random number or you will lose the round. <br> <br>After
+                10 losses the game is over and you must start your journey again. <br> <br><br>Once you are ready to
+                proceed, click OK.
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn-dark" data-dismiss="modal"
+                  style="font-family: 'Swanky and Moo Moo', cursive;">OK</button>
+              </div>
+
             </div>
-            <div class="col-md-5"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5"></div>
     </div>
-    </div>
-    <div class="view" style="background-image: url('./assets/images/zen_background.jpg'); background-repeat:repeat; background-size: cover; background-position: center;">
+  </div>
+  <div class="view"
+    style="background-image: url('./assets/images/zen_background.jpg'); background-repeat:repeat; background-size: cover; background-position: center;">
     <div id="mainGame" class="container">
-       
-       
-      <!-- <div class="button">
-           <button id="startGame">Start Game</button>
-       </div>-->
-    <div class="row">
-            <div class="col-md-4"></div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
         <div align="center" class="col-md-4">
-            <h3>Zen Crystals</h3>
+          <h3 style="font-family: 'Swanky and Moo Moo', cursive;">Zen Crystals</h3>
         </div>
         <div class="col-md-4"></div>
-    </div>
-    <div id="gameInfo" class="row">
-        <div  class="col-md-4"></div>
+      </div>
+      <div id="gameInfo" class="row">
+        <div class="col-md-4"></div>
         <div align="center" class="col-md-4">
-            <h3 id="numberRandom">Random Number</h3>
-            <h3 id="gameMessages"></h3>
-            <!--<h2 id="valueCrys">Value of Crystal:</h2>-->
-            <h3 id="currentTotal">Your Current Total:</h3>
-            <!--this div will contain messsages written to player-->
-            <h4 id="wins">Wins:</h4><br>
-            <h4 id="losses">Losses:</h4>
+          <h3 id="numberRandom" style="font-family: 'Swanky and Moo Moo', cursive;">Random Number</h3>
+          <h3 id="gameMessages" style="font-family: 'Swanky and Moo Moo', cursive;"></h3>
+
+          <h3 id="currentTotal" style="font-family: 'Swanky and Moo Moo', cursive;">Your Current Total:</h3>
+
+          <h4 id="wins" style="font-family: 'Swanky and Moo Moo', cursive;">Wins:</h4><br>
+          <h4 id="losses" style="font-family: 'Swanky and Moo Moo', cursive;">Losses:</h4>
         </div>
         <div class="col-md-4"></div>
-       
-            
-        </div>
+
+
+      </div>
     </div>
     <div id="crystals" class="row">
-        <div class="col-xs-12 col-md-2"></div>
-        <div align=" center" id="crysDisplay" class="col-xs-12 col-md-3"><!--The Crstals will be displayed inside of this div--></div>
-        <div class="col-xs-1 col-md-4"></div>     
-        <div class="col-xs-1 col-md-3"></div>
+      <div class="col-xs-12 col-md-2"></div>
+      <div align=" center" id="crysDisplay" class="col-xs-12 col-md-3">
+        <!--The Crstals will be displayed inside of this div-->
+      </div>
+      <div class="col-xs-1 col-md-4"></div>
+      <div class="col-xs-1 col-md-3"></div>
     </div>
     <div class="row">
-      
-        <div align="center" id="msgBoard" class="col-md-6"></div>
-        <div align="center" id="scoreCard" class="col-md-6"></div>
-    </div>
-</div>
-<div id="hideMe"  class="container">
-    <div class="row">
-        <div id="gameOver" align="center" class="col-md-12"></div>
-    </div>
-    <div class="row">
-        <div align="center"  class="col-md-12">
-                <button id="restart" type="button" class="btn btn-dark">Click to Restart the Game</button>
-        </div>
-    </div>
-   
-</div>
-<audio controls id="ambient" style="display: none">
-        <source src="./assets/audio/ambient.mp3" type="audio/mp3">
-      </audio>
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script type="text/javascript" src="./assets/javascript/game.js"></script>
+      <div align="center" id="msgBoard" class="col-md-6"></div>
+      <div align="center" id="scoreCard" class="col-md-6"></div>
+    </div>
+  </div>
+  <div id="hideMe" class="container">
+    <div class="row">
+      <div id="gameOver" align="center" class="col-md-12"></div>
+    </div>
+    <div class="row">
+      <div align="center" class="col-md-12">
+        <button id="restart" type="button" class="btn-dark" style="font-family: 'Swanky and Moo Moo', cursive;">Click to
+          Restart the Game</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/javascript/game.js"></script>
 </body>
+
 </html>

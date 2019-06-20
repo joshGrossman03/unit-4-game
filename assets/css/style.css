@@ -1,28 +1,19 @@
 #startButton{
     position:relative;
-    background-color: black;
+  
 }
-
 #startGame{
     position: absolute;
     top:350px;
     right:20px;
 }
-
-#restart{
-    
+#restart{  
     margin:30px;
 }
 
 #hideMe{
     background-color: black;
 }
-
-.bg{
-    background-image: url("./assets/images/zen_background.jpg");
-}
-
-
 
 .modal-body, .modal-title{
     color: black;
@@ -38,9 +29,11 @@
     margin-top:30px;
     margin-bottom:160px;
 }
-
 #startScreen{
     background-color: black;
+}
+
+
 }
 @media only screen and (max-width: 600px) {
     #crystals{
