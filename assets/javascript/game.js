@@ -46,6 +46,7 @@ function game(){
 //event grabs value of crystal adds to score  variable then calls checkForWin function
     
     $(".number").on("click", function(){
+        $("#gameTitle").hide();
         var roundScore = parseInt($(this).attr("value"));
         //$("#valueCrys").html("Crystal Value: "+ roundScore);
         score = (parseInt(score)+ parseInt(roundScore));
@@ -132,6 +133,7 @@ function checkForWin(){
         game();
         $("#startGame").hide();
         $("#mainGame").show();
+        
     });
 
     $("#modalOkButton").click( function(){
