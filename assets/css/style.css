@@ -42,3 +42,19 @@
 #startScreen{
     background-color: black;
 }
+@media only screen and (max-width: 600px) {
+    #crystals{
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+    #gameInfo{
+        
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+    #startGame{
+        position: absolute;
+        top:350px;
+        right:150px;
+    }
+  }
